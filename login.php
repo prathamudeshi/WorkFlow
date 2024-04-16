@@ -1,15 +1,3 @@
-<?php
-
-$nameError = $emailError = $passwordError = "";
-$name = $email =$password ="";
-
-?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
