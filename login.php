@@ -1,6 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Name = $_POST['Name']; 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {; 
     $Email = $_POST['Email'];
     $Password = $_POST['Password'];
 
@@ -8,8 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $dbpassword = "";
-    $database = "workflow";
+    $database = "garv";
     $newURL = "Something";
+
+    session_start();
 
     
     $conn = mysqli_connect($servername, $username, $dbpassword, $database);
@@ -21,7 +22,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Connection was successful<br>";
     }
 
-//     $sql = "INSERT INTO gg (Name, Email, Password) VALUES ('$Name', '$Email', '$Password')";
+
+
+    $sql = "SELECT * FROM gg where Email='".$Email."' AND Password='".$Password."'";
+    $result = mysqli_query($conn, $sql);
+    $row= mysqli_fetch_array($result);
+
+    
+
+    
+
+
+
+
+
+    if($row["usertype"]=="user")
+	{	
+
+		$_SESSION["Email"]=$Email;
+
+		header("location:Something.php");
+	}
+
+	elseif($row["usertype"]=="admin")
+	{
+
+		$_SESSION["username"]=$username;
+		
+		header("location:Admin.php");
+	}
+
+	else
+	{
+		echo "username or password incorrect";
+	}
+
+}
+
+
+
+?>
+
+$sql = "INSERT INTO gg (Name, Email, Password) VALUES ('$Name', '$Email', '$Password')";
 
 //     $result = mysqli_query($conn, $sql);
 
@@ -31,14 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     else{
 //         echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
 //     }
-// }
+// 
 
 
 
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -108,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <path d="M24.647 32.7527L0.00170898 57.9477L4.94557 63.0018L29.5909 37.8068L24.647 32.7527Z"
                     fill="currentColor"></path>
             </svg>
-        </div>
+        </div> -->
         <!-- <div id="nav-part2">
             <div id="links">
                 <a href="#">Shop</a>
@@ -121,101 +163,101 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div> -->
 
-    </div>
+    <!-- </div>
 
     <div id="main">
         <div id="page1">
-            <h1>Login</h1>
+            <h1>Login</h1> -->
             <!-- <div id="video-container">
                 <div id="play">PLAY</div>
                 <video autoplay loop muted src="video.mp4"></video>
             </div> -->
-        </div>
+        <!-- </div>
 
-
-session_start(); 
+<?php
+// session_start();  -->
 
 // include "login.php";
 
-if (isset($_POST['Email']) && isset($_POST['Password'])) {
+// if (isset($_POST['Email']) && isset($_POST['Password'])) {
 
-    function validate($data){
+//     function validate($data){
 
-       $data = trim($data);
+//        $data = trim($data);
 
-       $data = stripslashes($data);
+//        $data = stripslashes($data);
 
-       $data = htmlspecialchars($data);
+//        $data = htmlspecialchars($data);
 
-       return $data;
+//        return $data;
 
-    }
+//     }
 
-    $Email = validate($_POST['Email']);
+//     $Email = validate($_POST['Email']);
 
-    $Password = validate($_POST['Password']);
+//     $Password = validate($_POST['Password']);
 
-    if (empty($Email)) {
+//     if (empty($Email)) {
 
         // header("Location: index.php?error=User Name is required");
-        echo"Email required";
+    //     echo"Email required";
 
-        exit();
+    //     exit();
 
-    }else if(empty($Password)){
+    // }else if(empty($Password)){
 
-        echo"Password required";
+    //     echo"Password required";
         // header("Location: index.php?error=Password is required");
 
-        exit();
+//         exit();
 
-    }else{
+//     }else{
 
-        $sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+//         $sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
 
-        $result = mysqli_query($conn, $sql);
+//         $result = mysqli_query($conn, $sql);
 
-        if (mysqli_num_rows($result) === 1) {
+//         if (mysqli_num_rows($result) === 1) {
 
-            $row = mysqli_fetch_assoc($result);
+//             $row = mysqli_fetch_assoc($result);
 
-            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+//             if ($row['user_name'] === $uname && $row['password'] === $pass) {
 
-                echo "Logged in!";
+//                 echo "Logged in!";
 
-                $_SESSION['user_name'] = $row['user_name'];
+//                 $_SESSION['user_name'] = $row['user_name'];
 
-                $_SESSION['name'] = $row['name'];
+//                 $_SESSION['name'] = $row['name'];
 
-                $_SESSION['id'] = $row['id'];
+//                 $_SESSION['id'] = $row['id'];
 
-                header("Location: home.php");
+//                 header("Location: home.php");
 
-                exit();
+//                 exit();
 
-            }else{
+//             }else{
 
-                header("Location: index.php?error=Incorect User name or password");
+//                 header("Location: index.php?error=Incorect User name or password");
 
-                exit();
+//                 exit();
 
-            }
+//             }
 
-        }else{
+//         }else{
 
-            header("Location: index.php?error=Incorect User name or password");
+//             header("Location: index.php?error=Incorect User name or password");
 
-            exit();
+//             exit();
 
-        }
+//         }
 
-    }
+//     }
 
-}else{
+// }else{
 
-    header("Location: index.php");
+//     header("Location: index.php");
 
-    exit();
+//     exit();
 
-}
-?>
+// }
+// ?>
