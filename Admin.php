@@ -81,12 +81,12 @@ session_start();
         <div id="nav-part2">
             <div id="links">
                 <a href="Register.html">Sign Up/Sign In</a>
-                <a href="#">Projects</a>
+                <a href="something.php">Projects</a>
                 <a href="">About Us</a>
                 <a href="Logout.php">Logout</a><?php echo $_SESSION["Email"] ?>
             </div>
             <div id="icons" style="color : black">
-            <a href="Admin-cs.html" style = " color: black; text-decoration:  none">
+            <a href="Admin-cs.html" style = " color: black;text-decoration:none">
                 <!-- <i class="ri-menu-fill"></i> -->
                 <i class="ri-shopping-cart-2-line"></i></a>
             </div>
@@ -115,7 +115,7 @@ session_start();
                 <!-- <div class="dets"></div> -->
                 <div data-scroll data-scroll-speed="-2" class="dets plan-info">
                     
-                <a href = "https://github.com/prathamudeshi/Online-Compiler-Internship" style = "color:black">Onlline Compiler</a>
+                <a href = "https://github.com/prathamudeshi/Online-Compiler-Internship" style = "color:black; text-decoration:none">Onlline Compiler</a>
                     <!-- <div class="subdets">
                         A full fledged Online Compiler capable of compiling C and Python language while barely using any system resources.
                     </div> -->
@@ -128,8 +128,8 @@ session_start();
                     alt="">
                 <!-- <div class="dets"></div> -->
 
-                <div data-scroll data-scroll-speed="-2" class="dets" style = "color : black">
-                    <a href = "https://github.com/prathamudeshi/WorkFlow" style = "color:black">Workflow</a>
+                <div data-scroll data-scroll-speed="-2" class="dets" style = "color : black; text-decoration:none">
+                    <a href = "https://github.com/prathamudeshi/WorkFlow" style = "color:black; text-decoration:none">Workflow</a>
                 </div>
             </div>
             <div id="elem3" class="elem">
@@ -138,7 +138,7 @@ session_start();
                     alt="">
                 <!-- <div class="dets"></div> -->
                 <div data-scroll data-scroll-speed="-2" class="dets">
-                <a href = "https://github.com/prathamudeshi/chatbot.github.io" style = "color:black">Chat-Bot</a>
+                <a href = "https://github.com/prathamudeshi/chatbot.github.io" style = "color:black; text-decoration:none">Chat-Bot</a>
                 </div>
             </div>
         </div>
@@ -219,23 +219,45 @@ session_start();
                   <span class="logo_name">Workflow</span>
                 </div>
                 <div class="media-icons">
-                  <a href="#">
+                  <a href="https://www.facebook.com/share/dR4a8CTVToScbrfS/?mibextid=LQQJ4d">
+                      <img style= "max-width: 100%;" class = "fab fa-facebook-f" src="images/facebook.png" alt="">
                     <!-- <i class="fab fa-facebook-f"> -->
-                <img class = "fab fa-facebook-f" src="images/facebook.png" alt="">
             <!-- </i> -->
         </a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#">
+                      <img style= "max-width: 100%;" class = "fab fa-twitter-f" src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png" alt="">
+                    <!-- <i class="fab fa-facebook-f"> -->
+            <!-- </i> -->
+        </a>
+                  
+
+        <a href="https://www.instagram.com/__workflow_?igsh=cmF3YnJ6c2FieW12&utm_source=qr">
+                      <img style= "max-width: 100%;" class = "fab fa-facebook-f" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-instagram-new-circle-512.png" alt="">
+                    <!-- <i class="fab fa-facebook-f"> -->
+            <!-- </i> -->
+        </a>
+                
+
+        <a href="#">
+                      <img style= "max-width: 100%;" class = "fab fa-facebook-f" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/linkedin_circle-512.png" alt="">
+                    <!-- <i class="fab fa-facebook-f"> -->
+            <!-- </i> -->
+        </a>
+                 
+
+        <a href="#">
+                      <img style= "max-width: 100%;" class = "fab fa-facebook-f" src="https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png" alt="">
+                    <!-- <i class="fab fa-facebook-f"> -->
+            <!-- </i> -->
+        </a>
                 </div>
               </div>
               <div class="link-boxes">
                 <ul class="box">
                   <li class="link_name">Company</li>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Contact us</a></li>
-                  <li><a href="#">About us</a></li>
+                  <li><a href="Something.php">Home</a></li>
+                  <li><a href="Contactus.html">Contact us</a></li>
+                  <li><a href="Something.html">About us</a></li>
                   <li><a href="#">Get started</a></li>
                 </ul>
                 <ul class="box">
