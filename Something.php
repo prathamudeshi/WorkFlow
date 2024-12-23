@@ -81,7 +81,7 @@ session_start();
         <div id="nav-part2">
             <div id="links">
                 <a href="Register.html">Sign Up/Sign In</a>
-                <a href="something.php">Projects</a>
+                <a href="projects.html">Projects</a>
                 <a href="">About Us</a>
                 <a href="Logout.php">Logout</a><?php echo $_SESSION["Email"] ?>
             </div>
@@ -160,6 +160,8 @@ session_start();
                     alt=""></a>
             </div>
         </div>
+
+        <form  action = "Request.html" class="req-btn" ><a href="Request.html"></a><button  class = " btn" style= " color: white;background-color: black;margin:auto">Request</button></form>
 
 
         <!-- <div id="plans" style: "margin: 50px;">

@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {;
 	{	
 
 		$_SESSION["Email"]=$Email;
+        $_SESSION["Password"]=$Password;
 
 		header("location:Something.php");
 	}
@@ -47,7 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {;
 	elseif($row["usertype"]=="admin")
 	{
 
-		$_SESSION["username"]=$username;
+		$_SESSION["Email"]=$Email;
+        $_SESSION["Password"]=$Password;
+
 		
 		header("location:Admin.php");
 	}
